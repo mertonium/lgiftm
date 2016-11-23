@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title
+      LGTMertens
+    %link{ rel: 'stylesheet', href: '/css/boot.min.css'}
+    %script{ src: '/js/clipboard.min.js' }
+    %script{ src: '/js/lgiftm.js' }
+  %body
+    .container
+      %h1
+        LGTMertens
+
+      .row
+        - urls.each do |url|
+          .col-xs-12.col-sm-4
+            .box.box-basic
+              .lgtm-card
+                .flex-embed.bg-default
+                  .flex-embed-ratio.flex-embed-16x9
+                    .flex-embed-content.flex-embed-cover-image.txt-r{ style: "background-image: url('#{url}');" }
+                      %button.btn.btn-action.btn-outline.position-bottom.position-absolute.position-right.pvxxs.phxs.maxxs{ :'data-clipboard-text' => "![LGTM](#{url})" }
+                        %img{ src: '/img/clippy.svg', width: '20', alt: 'Copy to clipboard' }
+
