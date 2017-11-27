@@ -12,7 +12,7 @@
         LGTMertens
 
       .row
-        - urls.shuffle.each do |url|
+        - urls.each do |url|
           .col-xs-12.col-sm-4
             .box.box-basic
               .lgtm-card
@@ -21,4 +21,3 @@
                     .flex-embed-content.flex-embed-cover-image.txt-r{ style: "background-image: url('#{url}');" }
                       %button.btn.btn-action.btn-outline.position-bottom.position-absolute.position-right.pvxxs.phxs.maxxs{ :'data-clipboard-text' => "![LGTM](#{url})" }
                         %img{ src: '/img/clippy.svg', width: '20', alt: 'Copy to clipboard' }
-
