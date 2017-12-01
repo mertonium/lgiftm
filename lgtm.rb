@@ -4,5 +4,6 @@ require 'haml'
 LGTM_URLS = IO.readlines('data/lgtm_urls.txt').map(&:strip).uniq
 
 get '/' do
-  haml :index, locals: { urls: LGTM_URLS.shuffle }
+  urls = LGTM_URLS.shuffle.take(21)
+  haml :index, locals: { urls: urls }
 end
